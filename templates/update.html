@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% include 'header.html' %}
+ 
+ 
+ 
+{% block title %} Home {% endblock %}
+ 
+ 
+ 
+{% block body %}
+<div class="container">
+<form action='' method = "POST">
+<table class="table">
+    <tr>
+        <td>Nama</td>
+        <td><input type = "text" name = "nama" value="{{waste.nama}}" class="form-control" /></td>
+    </tr>
+    <tr>
+        <td>Jenis Sampah</td>
+        <td>
+        <select name="jenis" class="form-control">
+            <option value="sampahorganik"
+            {% if 'sampahorganik' in waste.jenis %}
+            selected
+           {% endif %}
+            >Sampah Organik</option>
+            <option value="sampahanorganik"
+            {% if 'sampahanorganik' in waste.jenis %}
+              selected
+           {% endif %}
+            >Sampah Anorganik</option>
+
+         </select>
+        </td>
+    </tr>
+
+    <tr>
+        <td>harga</td>
+        <td><input type = "harga" name = "harga" class="form-control" value="{{waste.harga}}" /></td>
+    </tr>
+
+
+    <tr>
+        <td colspan="2">
+            <input type="submit" name="submit" value="submit" class="btn btn-warning">
+        </td>
+       
+    </tr>
+</table>
+  
+  </form>
+
+</div>
+{% endblock %}
+
+
